@@ -1,0 +1,14 @@
+class Solution {
+public:
+    bool hasDuplicate(vector<int>& nums) {
+        unordered_map<int,bool> hash;
+        for(int i=0; i<nums.size(); i++){
+            if(hash.find(nums[i])!=hash.end()) return true;
+            else{
+                hash.insert({nums[i],true});
+               // hash[i]=true;
+            }
+        }
+        return false;
+    }
+};
